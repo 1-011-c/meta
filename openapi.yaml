@@ -1,0 +1,98 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Corona Test Case
+  license:
+    name: MIT
+    
+servers:
+  - url: https://corona-test-case.io
+
+paths:
+  /corona-test-case/{uuid}:
+    get:
+      summary: Returns the testcase of a given uuid
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: The uuid of the testcase to receive
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CoronaTestCase"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  
+  /corona-test-case/{uuid}/{infected}:
+    post:
+      summary: Updates the testcase of a given uuid
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: The uuid of the testcase to receive
+          schema:
+            type: string
+        - name: infected
+          in: path
+          required: true
+          description: The status that should be set for the test case
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CoronaTestCase"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                
+components:
+  schemas:
+    CoronaTestCase:
+      type: object
+      required:
+        - uuid_read
+        - uuid_write
+        - infected
+        - date
+      properties:
+        uuid_read:
+          type: string
+          format: uuidv4
+        uuid_write:
+          type: string
+          format: uuidv4
+        infected:
+          type: boolean
+        date:
+          type: string
+          format: date-time
+          
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
