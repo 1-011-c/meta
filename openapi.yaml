@@ -63,14 +63,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  '/corona-test-case/{amount}':
+  '/corona-test-case':
     post:
       summary: 'Creates a new, empty test case'
       parameters:
         - name: amount
-          in: path
+          in: query
           required: true
-          description: The amount of Testcases to generate
+          description: The amount of Testcases to generate. Max is 50. Defaults to 1. Faulty values will also default to 1.
           schema:
             type: string
       responses:
