@@ -59,7 +59,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  '/corona-testcase':
+  '/corona-test-case':
     post:
       summary: 'Creates a new, empty test case'
       responses:
