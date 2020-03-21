@@ -80,7 +80,12 @@ components:
           type: string
           format: uuidv4
         infected:
-          type: boolean
+          type: string
+          enum: 
+            - NOT_TESTED
+            - IN_PROGRESS
+            - POSITIVE
+            - NEGATIVE
         date:
           type: string
           format: date-time
