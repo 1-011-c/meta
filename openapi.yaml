@@ -45,7 +45,11 @@ paths:
           required: true
           description: The status that should be set for the test case
           schema:
-            type: boolean
+            type: string
+            enum:
+              - POSITIVE
+              - NEGATIVE
+
       responses:
         '200':
           description: Expected response to a valid request
