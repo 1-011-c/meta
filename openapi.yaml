@@ -34,7 +34,7 @@ paths:
                 $ref: "#/components/schemas/Error"
   
   /corona-test-case/{uuid}/{infected}:
-    post:
+    patch:
       summary: Updates the testcase of a given uuid
       parameters:
         - name: uuid
