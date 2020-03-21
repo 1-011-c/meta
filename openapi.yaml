@@ -63,16 +63,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  '/corona-test-case':
+  '/corona-test-case/{amount}':
     post:
       summary: 'Creates a new, empty test case'
+      parameters:
+        - name: amount
+          in: path
+          required: true
+          description: The amount of Testcases to generate
+          schema:
+            type: string
       responses:
         '200':
-          description: Returns a full corona test case object, with both uuid's
+          description: Returns a List of full corona test case object, with both uuid's
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CoronaTestCase'
+                type: array
+                items:
+                  $ref: '#/components/schemas/CoronaTestCase'
         default:
           description: unexpected error
           content:
