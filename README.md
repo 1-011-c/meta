@@ -11,6 +11,8 @@
 | frontend-patient | Mobile App zur Abfrage des Befundstatus anhand der persönlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient)
 | frontend-patient-html | Webseite zur Abfrage des Befundstatus anhand der persöonlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient-html)
 
+> :warning: Alle Applikationen sind funktionstüchtig - mit der IS-Issuer Anwendung lassen sich echte IDs generieren, die mit der Labor-App und den Frontend-Apps genutzt werden können!
+
 > :loudspeaker: Die Patienten-Seite ist live: https://mein.testbefund.de
 
 ## Informationsplattform
