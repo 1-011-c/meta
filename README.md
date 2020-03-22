@@ -1,3 +1,5 @@
+![logo](logo.png)
+
 ## Infektionsfall-Übermittlung
 ### Wie können Infektionsfälle rasch und effizient übermittelt werden?
 
