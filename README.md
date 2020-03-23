@@ -9,7 +9,7 @@
 | frontend-id-issuer | CLI-basierte Generierung der Tracking-ID-Druckvorlagen | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-id-issuer)
 | fontend-laboratory | Mobile App zur Erfassung des Test-Status durch Labore | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-laboratory)
 | frontend-patient | Mobile App zur Abfrage des Befundstatus anhand der persönlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient)
-| frontend-patient-html | Webseite zur Abfrage des Befundstatus anhand der persöonlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient-html)
+| frontend-patient-html | Webseite zur Abfrage des Befundstatus anhand der persönlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient-html)
 
 > :warning: Alle Applikationen sind funktionstüchtig - mit der ID-Issuer Anwendung lassen sich echte IDs generieren, die mit der Labor-App und den Frontend-Apps genutzt werden können!
 
