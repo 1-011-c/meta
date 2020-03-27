@@ -23,7 +23,21 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CoronaTestCase'
+                type: object
+                required:
+                  - infected
+                  - date
+                properties:
+                  infected:
+                    type: string
+                    enum:
+                      - NOT_TESTED
+                      - IN_PROGRESS
+                      - POSITIVE
+                      - NEGATIVE
+                  date:
+                    type: string
+                    format: date-time
         default:
           description: unexpected error
           content:
