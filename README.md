@@ -4,10 +4,10 @@
 
 | Komponente | Funktion | Status | Projekt-Link |
 |------------|----------|--------|--------------|
-| testbefund-API | API of testbefund | :green_heart: working | [link](https://github.com/1-011-c/testbefund-api)
-| frontend-id-generator | React based client that creates test containers | :green_heart: working | [link](https://github.com/1-011-c/frontend-id-generator)
-| fontend-input-ui| Angular based client to update test data | :green_heart: working | [link](https://github.com/1-011-c/testbefund-input-ui)
-| frontend-patient | Mobile App zur Abfrage des Befundstatus anhand der persönlichen Tracking-ID | :green_heart: funktionsfähig | [link](https://github.com/1-011-c/frontend-patient-pwa)
+| testbefund-API | API of testbefund | :green_heart: running | [link](https://github.com/1-011-c/testbefund-api)
+| frontend-id-generator | React based client that creates test containers | :green_heart: running | [link](https://github.com/1-011-c/frontend-id-generator)
+| fontend-input-ui| Angular based client to update test data | :green_heart: running | [link](https://github.com/1-011-c/testbefund-input-ui)
+| frontend-patient-pwa | Vue based client to view test results | :green_heart: running | [link](https://github.com/1-011-c/frontend-patient-pwa)
 
 > :warning: All other components are not used and are a legacy-result of the prototype developed ~@#wirvsvirus
 
