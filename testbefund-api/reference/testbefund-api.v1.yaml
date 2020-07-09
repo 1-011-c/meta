@@ -12,6 +12,8 @@ servers:
 tags:
   - name: test
     description: Test API
+  - name: organization
+    description: OrganizationsApi
 paths:
   /v1/test/auth:
     get:
@@ -80,7 +82,8 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - test
       responses:
         '200':
           description: OK
@@ -109,7 +112,8 @@ paths:
         required: true
     post:
       summary: Update Test
-      tags: []
+      tags:
+        - test
       responses:
         '204':
           description: No Content
@@ -134,6 +138,71 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TestbefundUpdateFindingRequest'
+  /v1/organization:
+    get:
+      summary: Organizations
+      tags:
+        - organization
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TestbefundIssuingOrganization'
+      operationId: getAllOrganizations
+      description: Returns all organizations
+    parameters: []
+    post:
+      summary: Create Organization
+      operationId: createOrganization
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestbefundIssuingOrganization'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestbefundIssuingOrganization'
+        description: ''
+      tags:
+        - organization
+      description: Creates a new organization
+  '/v1/organization/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags:
+        - organization
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestbefundIssuingOrganization'
+      operationId: getOrganizationById
+      description: Returns a single organization by id
+    delete:
+      summary: ''
+      operationId: deleteOrganization
+      responses:
+        '200':
+          description: OK
+      description: Deletes an organization
+      tags:
+        - organization
 components:
   schemas:
     TestbefundIssuingOrganization:
@@ -211,6 +280,7 @@ components:
       type: string
       title: TestbefundFindingResult
       enum:
+        - UNKNOWN
         - POSITIVE
         - NEGATIVE
       description: 'Result of a finding, can be POSITIVE or NEGATIVE. If result is not known yet, it will be UNKNOWN'
@@ -224,6 +294,7 @@ components:
     TestbefundTestContainer:
       title: TestbefundTestContainer
       type: object
+      description: Writeable test container
       properties:
         writeId:
           type: string
@@ -233,7 +304,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TestbefundTest'
-      description: Writeable test container
+        issuer:
+          $ref: '#/components/schemas/TestbefundIssuingOrganization'
     TestbefundTest:
       title: TestbefundTest
       type: object
@@ -243,7 +315,7 @@ components:
         title:
           type: string
         currentStatus:
-          type: string
+          $ref: '#/components/schemas/TestbefundFindingResult'
         icdCode:
           type: string
     TestbefundUpdateFindingRequest:
